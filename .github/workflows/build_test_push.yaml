@@ -1,0 +1,26 @@
+name: build test push dcm4che docker
+
+on: 
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'README.md'
+  pull_request:  
+    branches: [ main ]
+    paths-ignore:
+      - 'README.md'
+  
+jobs:
+  build_test_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository content
+        uses: actions/checkout@v3 # Checkout the repository content to github runner.
+      - name: build
+        run: make build
+      - name: test
+        run: make test
+      - name: push
+        run: |
+          echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+          make push
