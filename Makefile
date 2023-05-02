@@ -18,5 +18,6 @@ test:
 	docker run --rm ${NAME} findscu -h
 
 push:
+	docker tag ${NAME} ${FULL_NAME}
 	#docker login
 	docker push ${FULL_NAME}
