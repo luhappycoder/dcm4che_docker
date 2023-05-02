@@ -20,6 +20,8 @@ jobs:
         run: make build
       - name: test
         run: make test
+      - name: tag
+        run: make tag
       - name: push
         run: |
           echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin

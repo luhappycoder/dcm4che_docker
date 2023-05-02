@@ -11,13 +11,12 @@ test_version:
 build: 
 	docker build -t $(NAME) --rm . --build-arg DCM4CHE_VERSION=${DCM4CHE_VERSION}
 
-tag:
-	docker tag ${NAME} ${FULL_NAME}
-
 test:
 	docker run --rm ${NAME} findscu -h
 
-push:
+tag:
 	docker tag ${NAME} ${FULL_NAME}
+
+push:
 	#docker login
 	docker push ${FULL_NAME}
