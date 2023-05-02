@@ -6,7 +6,7 @@
 
 `docker run --rm -it luhappycoder/dcm4che:0.4 findscu -h`
 
-## change history:
+## Change history:
 
 0.4:added `'echo 'EnhancedMRImageStorage:ImplicitVRLittleEndian;ExplicitVRLittleEndian'>>/opt/dcm4che-3.3.8/etc/getscu/store-tcs.properties'`, for retrieving physio dicom files. 
 
