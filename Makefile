@@ -15,7 +15,7 @@ tag:
 	docker tag ${NAME} ${FULL_NAME}
 
 test:
-	docker run --rm -it ${NAME} findscu -h
+	docker run --rm ${NAME} findscu -h
 
 push:
 	#docker login
