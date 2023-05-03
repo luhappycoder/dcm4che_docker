@@ -17,7 +17,7 @@ with open("dcm4che_version.txt", "r") as f:
     VERSION = f.readline()
 
 # download and install dcm4che
-DEST = f"{sys.argv[1]}"
+DEST = sys.argv[1]
 os.makedirs(DEST, exist_ok=True)
 install_cmd = f"""
 wget -O temp.zip https://sourceforge.net/projects/dcm4che/files/dcm4che3/{VERSION}/dcm4che-{VERSION}-bin.zip/download
